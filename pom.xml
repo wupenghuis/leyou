@@ -16,6 +16,7 @@
         <module>ly-item/ly-item-service</module>
         <module>ly-common</module>
         <module>ly-upload</module>
+        <module>ly-searchs</module>
     </modules>
 
     <parent>

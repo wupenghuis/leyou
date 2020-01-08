@@ -6,6 +6,7 @@ import com.leyou.item.pojo.SpecGroup;
 import com.leyou.item.pojo.SpecParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -44,5 +45,17 @@ public class SpecService {
         specParam.setSearching(searching);
         specParam.setGeneric(generic);
         return this.specParamMapper.select(specParam);
+    }
+    @Transactional
+    public void addSpecGroup(SpecGroup specGroup) {
+        this.specGroupMapper.insertSelective(specGroup);
+    }
+    @Transactional
+    public void deleteSpecGroup(Long id) {
+        this.specGroupMapper.deleteByPrimaryKey(id);
+    }
+
+    public void updateSpecGroup(SpecGroup specGroup) {
+        this.specGroupMapper.updateByPrimaryKey(specGroup);
     }
 }

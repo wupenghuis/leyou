@@ -4,20 +4,21 @@ import com.leyou.common.pojo.PageResult;
 import com.leyou.item.pojo.Brand;
 import com.leyou.item.pojo.Spu;
 import com.leyou.item.pojo.SpuBo;
+import com.leyou.item.pojo.SpuDetail;
+import com.leyou.item.service.GoodsService;
 import com.leyou.item.service.SpuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("spu")
 public class SpuController {
     @Autowired
     SpuService spuService;
+    @Autowired
+    GoodsService goodsService;
     @GetMapping("page")
     public ResponseEntity<PageResult<SpuBo>> pageSpu(
             @RequestParam(value = "page",defaultValue = "1")Integer page,
@@ -32,4 +33,6 @@ public class SpuController {
         }
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+
 }

@@ -39,4 +39,20 @@ public class SpecController {
         }
         return  ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
+    @PostMapping("group")
+    public  ResponseEntity<Void> addSpecGroup(@RequestBody SpecGroup specGroup){
+        System.out.println("specGroup"+specGroup+"===============");
+        this.specService.addSpecGroup(specGroup);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @DeleteMapping("group/{id}")
+    public ResponseEntity<Void> deleteSpecGroup(@PathVariable("id")Long id){
+        this.specService.deleteSpecGroup(id);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @PutMapping("group")
+    public ResponseEntity<Void> updateSpecGroup(@RequestBody SpecGroup specGroup){
+        this.specService.updateSpecGroup(specGroup);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }

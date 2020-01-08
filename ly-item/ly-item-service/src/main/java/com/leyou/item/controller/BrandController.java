@@ -57,11 +57,11 @@ public class BrandController {
         return ResponseEntity.status(HttpStatus.CREATED).build();//201
     }
     @GetMapping("cid/{cid}")
-    public ResponseEntity<List<Brand>> queryByBrandId(@PathVariable("bid") Long bid){
-        List<Brand> list=this.brandService.queryByBrandId(bid);
+    public ResponseEntity<List<Brand>> queryByBrandId(@PathVariable("cid") Long cid){
+        List<Brand> list=this.brandService.queryByBrandId(cid);
         if (list != null && 0!=list.size()) {
             return ResponseEntity.ok(list);//返回list集合同时返回状态码200
         }
-        return null;
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

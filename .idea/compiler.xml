@@ -7,15 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ly-searchs" />
         <module name="ly-api-gateway" />
         <module name="ly-item-service" />
-        <module name="ly-item" />
         <module name="ly-upload" />
+        <module name="ly-registry" />
         <module name="ly-item-interface" />
         <module name="ly-common" />
-        <module name="ly-registry" />
+        <module name="ly-item" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ly-search" target="1.8" />
+      <module name="untitled" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -26,7 +31,10 @@
       <module name="ly-item-interface" options="-parameters" />
       <module name="ly-item-service" options="-parameters" />
       <module name="ly-registry" options="-parameters" />
+      <module name="ly-search" options="-parameters" />
+      <module name="ly-searchs" options="-parameters" />
       <module name="ly-upload" options="-parameters" />
+      <module name="untitled" options="-parameters" />
     </option>
   </component>
 </project>
